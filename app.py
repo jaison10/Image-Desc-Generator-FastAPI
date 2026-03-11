@@ -46,6 +46,6 @@ async def generate(file: UploadFile = File(...)):
 
     image_bytes = await file.read()
 
-    description = generate_image_description(image_bytes)
+    description = generate_image_description(image_bytes, file.content_type)
 
     return {"description": description}
